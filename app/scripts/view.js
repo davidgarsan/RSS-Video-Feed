@@ -55,7 +55,7 @@
 
   View.prototype._goUp = function () {
     if (this.selected > 0) {
-      console.log('up');
+      //console.log('up');
       this._select(this.selected - 1);
       this.$list.childNodes[this.selected].focus();
     }
@@ -63,7 +63,7 @@
 
   View.prototype._goDown = function () {
     if (this.selected < this.data.length-1) {
-      console.log('down');
+      //console.log('down');
       this._select(this.selected + 1);
       this.$list.childNodes[this.selected].focus();
     }
@@ -82,12 +82,12 @@
 
     $delegate(this.$list, 'a, h4, p', 'mousedown', function () {
       var element = $parent(this, 'a');
-      console.log(element.id);
+      //console.log(element.id);
       self._startPlayer(parseInt(element.id, 10));
     });
 
     $on(document, 'keydown', function (event) {
-      console.log(event.keyCode);
+      //console.log(event.keyCode);
       if (event.keyCode === self.ENTER_KEY) {
         self._startPlayer(self.selected);
         console.log('play');
