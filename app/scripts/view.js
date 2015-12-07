@@ -1,4 +1,4 @@
-/*global qs, qsa, $on, $parent, $delegate */
+/*global qs, toggleClass, preventDefault, $on, $parent, $delegate */
 
 (function (window) {
   'use strict';
@@ -90,13 +90,15 @@
       //console.log(event.keyCode);
       if (event.keyCode === self.ENTER_KEY) {
         self._startPlayer(self.selected);
-        console.log('play');
+        //console.log('play');
       }
       else if (event.keyCode === self.UP_KEY) {
         self._goUp();
+        preventDefault();
       }
       else if (event.keyCode === self.DOWN_KEY) {
         self._goDown();
+        preventDefault();
       }
       else if (event.keyCode === self.SPACE_KEY) {
         self.$player.paused ? self.$player.play() : self.$player.pause();
