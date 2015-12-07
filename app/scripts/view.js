@@ -34,7 +34,7 @@
     this.$title.innerHTML = title;
     this.$description.innerHTML = description;
     this.$list.innerHTML = this.template.show(data, selected);
-
+    toggleClass(this.$list, 'ready');
     this._startPlayer(selected);
     this._bind();
   };

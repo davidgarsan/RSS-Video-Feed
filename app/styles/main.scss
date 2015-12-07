@@ -15,11 +15,13 @@ $icon-font-path: "../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
 body {
   padding: 0;
   margin: 0;
+  background-color: #ccc;
 }
 
 .footer {
   padding-left: 15px;
   padding-right: 15px;
+  background-color: #ccc;
 }
 
 /* Custom page header */
@@ -55,18 +57,40 @@ body {
     -moz-box-shadow: 0 0 .5rem 0 rgba(0,0,0,0.75);
     box-shadow: 0 0 .5rem 0 rgba(0,0,0,0.75);
   }
-  .list-group {
-    overflow: auto;
-    height: 4rem * 7.9;
-    margin: 0;
-    z-index: 1;
-    -webkit-box-shadow: inset 0 0 1rem 0 rgba(0,0,0,0.75);
-    -moz-box-shadow: inset 0 0 1rem 0 rgba(0,0,0,0.75);
-    box-shadow: inset 0 0 1rem 0 rgba(0,0,0,0.75);
-    .list-group-item {
-      outline: 0;
-      height: 8rem;
-      box-shadow: 0 .8rem 2rem 0px rgba(0,0,0,0.75);
+  .list-wrapper {
+    position: relative;
+    &:after {
+      content: "";
+      position: absolute;
+      background-color: transparent;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      pointer-events: none;
+      -webkit-box-shadow: inset 0 0 3rem 0 #156786;
+      -moz-box-shadow: inset 0 0 3rem 0 #156786;
+      box-shadow: inset 0 0 3rem 0 #156786;
+      z-index: 1;
+    }
+    .list-group {
+      transition: height 0.8s ease-out;
+      position: relative;
+      overflow: auto;
+      height: 0rem;
+      margin: 0;
+      z-index: 1;
+      -webkit-box-shadow: inset 0 0 1rem 0 rgba(0,0,0,0.75);
+      -moz-box-shadow: inset 0 0 1rem 0 rgba(0,0,0,0.75);
+      box-shadow: inset 0 0 1rem 0 rgba(0,0,0,0.75);
+      .list-group-item {
+        outline: 0;
+        height: 8rem;
+        box-shadow: 0 .8rem 2rem 0px rgba(0,0,0,0.75);
+      }
+      &.ready {
+        height: 4rem * 7.9;
+      }
     }
   }
 }
@@ -77,15 +101,16 @@ body {
     border-radius: 4px;
     width: 100%;
     height: 45rem;
+    background: url(../images/logo.png) no-repeat center;
   }
   .caption {
     display: block;
     white-space: normal;
     border-radius: 4px;
-    background: #e3e3e3;
-    border: 1px solid #ccc;
+    background: #eee;
+    border: 1px solid #aaa;
     padding: 1rem;
-    color: #666;
+    color: #444;
   }
 }
 
