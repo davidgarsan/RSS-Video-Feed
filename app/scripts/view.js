@@ -102,6 +102,7 @@
       }
       else if (event.keyCode === self.SPACE_KEY) {
         self.$player.paused ? self.$player.play() : self.$player.pause();
+        preventDefault();
       }
     });
 
