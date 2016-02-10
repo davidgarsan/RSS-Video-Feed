@@ -1,3 +1,5 @@
+[![Build Status](https://semaphoreci.com/api/v1/davidgarsan/rss-video-feed/branches/master/badge.svg)](https://semaphoreci.com/davidgarsan/rss-video-feed)
+
 # RSS Video Feed
 Webapp showcasing the browsing and playback of a subset of the **CNN Video Podcast catalog**.
 
